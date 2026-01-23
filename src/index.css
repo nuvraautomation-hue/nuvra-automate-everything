@@ -96,29 +96,31 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-lg transition-all duration-300;
+    @apply bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-lg transition-all duration-500;
     background: var(--gradient-accent);
   }
 
   .btn-primary:hover {
     @apply scale-105;
-    box-shadow: 0 0 30px -5px hsl(38 92% 50% / 0.5);
+    box-shadow: 0 0 40px -5px hsl(43 74% 49% / 0.6);
   }
 
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground font-semibold px-8 py-4 rounded-lg border border-border transition-all duration-300;
+    @apply bg-secondary text-secondary-foreground font-semibold px-8 py-4 rounded-lg border border-primary/20 transition-all duration-300;
   }
 
   .btn-secondary:hover {
     @apply bg-muted border-primary/50;
+    box-shadow: 0 0 20px -5px hsl(43 74% 49% / 0.3);
   }
 
   .feature-card {
-    @apply bg-card-gradient border border-border rounded-2xl p-6 transition-all duration-300;
+    @apply bg-card-gradient border border-primary/10 rounded-2xl p-6 transition-all duration-500;
   }
 
   .feature-card:hover {
-    @apply border-primary/50 shadow-glow;
+    @apply border-primary/40;
+    box-shadow: 0 0 40px -10px hsl(43 74% 49% / 0.4), 0 25px 50px -12px hsl(0 0% 0% / 0.5);
     transform: translateY(-4px);
   }
 

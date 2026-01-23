@@ -35,7 +35,10 @@ const automations = [
 
 const AutomationSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background relative overflow-hidden">
+      {/* Premium gold accent */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+      
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-16">
@@ -52,13 +55,16 @@ const AutomationSection = () => {
           {automations.map((item, index) => (
             <div
               key={index}
-              className="feature-card group"
+              className="feature-card group relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/30 group-hover:to-primary/10 transition-all">
+              {/* Gold corner accent */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/40 group-hover:to-primary/15 transition-all duration-500 group-hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.5)]">
                 <item.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-foreground">{item.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-gradient transition-all duration-300">{item.title}</h3>
               <p className="text-muted-foreground">{item.description}</p>
             </div>
           ))}

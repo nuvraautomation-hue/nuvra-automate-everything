@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logoNuvra from "@/assets/logo-nuvra.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,11 +19,8 @@ const Header = () => {
       <div className="section-container">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-[hsl(25_95%_53%)] flex items-center justify-center">
-              <span className="text-primary-foreground font-black text-xl">N</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">NUVRA AI</span>
+          <Link to="/" className="flex items-center">
+            <img src={logoNuvra} alt="NUVRA AI" className="h-14 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

@@ -10,23 +10,23 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-lg hover:scale-105 hover:shadow-[0_0_30px_-5px_hsl(38_92%_50%_/_0.5)]",
+          "bg-primary text-primary-foreground shadow-lg hover:scale-105 hover:shadow-[0_0_30px_-5px_hsl(43_74%_49%_/_0.5)]",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/50",
+          "border border-primary/30 bg-transparent text-foreground hover:bg-primary/10 hover:border-primary/50",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-muted hover:border-primary/30 border border-border",
-        ghost: "text-foreground hover:bg-secondary hover:text-foreground",
+          "bg-secondary text-secondary-foreground shadow-sm hover:bg-muted hover:border-primary/30 border border-primary/20",
+        ghost: "text-foreground hover:bg-primary/10 hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-to-r from-primary to-[hsl(25_95%_53%)] text-primary-foreground font-bold shadow-lg hover:scale-105 hover:shadow-[0_0_40px_-5px_hsl(38_92%_50%_/_0.6)]",
+        hero: "bg-gradient-to-r from-[hsl(45_80%_55%)] to-[hsl(38_70%_42%)] text-black font-bold shadow-lg hover:scale-105 hover:shadow-[0_0_40px_-5px_hsl(43_74%_49%_/_0.7)]",
         heroOutline: "border-2 border-primary/60 bg-transparent text-foreground font-semibold hover:bg-primary/10 hover:border-primary",
       },
       size: {
         default: "h-11 px-6 py-2",
         sm: "h-9 rounded-md px-4 text-xs",
-        lg: "h-14 rounded-xl px-10 text-base",
-        xl: "h-16 rounded-xl px-12 text-lg",
+        lg: "h-12 rounded-xl px-8 text-base",
+        xl: "h-14 rounded-xl px-8 text-base md:h-16 md:px-12 md:text-lg",
         icon: "h-10 w-10",
       },
     },

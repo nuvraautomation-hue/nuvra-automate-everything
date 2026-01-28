@@ -31,10 +31,12 @@ const CTASection = () => {
           <p className="text-base md:text-lg text-muted-foreground mb-8 md:mb-10">
             Réservez un audit gratuit de 15 minutes. On analyse vos processus et on vous montre exactement ce qu'on peut automatiser.
           </p>
-          <Button variant="hero" size="xl" className="shadow-[0_0_50px_-10px_hsl(var(--primary)/0.7)] hover:shadow-[0_0_60px_-5px_hsl(var(--primary)/0.9)] transition-all duration-500">
-            Réserver mon audit gratuit
-            <ArrowRight className="w-5 h-5" />
-          </Button>
+          <a href="https://link.nuvra-automation.com/widget/booking/TSKHG4iPAUloDCyxhAqH" target="_blank" rel="noopener noreferrer">
+            <Button variant="hero" size="xl" className="shadow-[0_0_50px_-10px_hsl(var(--primary)/0.7)] hover:shadow-[0_0_60px_-5px_hsl(var(--primary)/0.9)] transition-all duration-500">
+              Réserver mon audit gratuit
+              <ArrowRight className="w-5 h-5" />
+            </Button>
+          </a>
         </div>
       </div>
     </section>

@@ -9,35 +9,15 @@ const Footer = () => {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-3xl" />
       
       <div className="section-container relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center mb-4">
               <img src={logoNuvra} alt="Nuvra Automation" className="h-16 w-auto" />
             </Link>
             <p className="text-muted-foreground max-w-sm">
-              Système d'automatisation IA complet pour entrepreneurs en construction et cliniques privées. Installé en 7 jours.
+              Système d'automatisation IA complet pour entrepreneurs. Installé en 7 jours.
             </p>
-          </div>
-
-          {/* Industries */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4 relative inline-block">
-              Industries
-              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-to-r from-primary to-primary/50" />
-            </h4>
-            <ul className="space-y-3 mt-6">
-              <li>
-                <Link to="/construction" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:pl-2">
-                  Construction
-                </Link>
-              </li>
-              <li>
-                <Link to="/cliniques" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:pl-2">
-                  Cliniques privées
-                </Link>
-              </li>
-            </ul>
           </div>
 
           {/* Contact */}

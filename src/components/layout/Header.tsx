@@ -10,8 +10,6 @@ const Header = () => {
 
   const navLinks = [
     { href: "/", label: "Accueil" },
-    { href: "/construction", label: "Construction" },
-    { href: "/cliniques", label: "Cliniques" },
   ];
 
   return (
@@ -42,9 +40,11 @@ const Header = () => {
 
           {/* CTA */}
           <div className="hidden md:block">
-            <Button variant="hero" size="default">
-              Réserver un audit
-            </Button>
+            <a href="https://link.nuvra-automation.com/widget/booking/TSKHG4iPAUloDCyxhAqH" target="_blank" rel="noopener noreferrer">
+              <Button variant="hero" size="default">
+                Réserver un audit
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -74,9 +74,11 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <Button variant="hero" size="default" className="mt-4">
-                Réserver un audit
-              </Button>
+              <a href="https://link.nuvra-automation.com/widget/booking/TSKHG4iPAUloDCyxhAqH" target="_blank" rel="noopener noreferrer" className="mt-4">
+                <Button variant="hero" size="default" className="w-full">
+                  Réserver un audit
+                </Button>
+              </a>
             </nav>
           </div>
         )}

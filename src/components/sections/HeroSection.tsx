@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, Zap } from "lucide-react";
+import { ArrowRight, Zap } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -37,7 +37,7 @@ const HeroSection = () => {
 
           {/* Subheadline */}
           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 md:mb-8 animate-fade-up px-2" style={{ animationDelay: "0.2s" }}>
-            Installation d'un système d'automatisation IA complet pour entrepreneurs en construction et cliniques privées.
+            Installation d'un système d'automatisation IA complet pour entrepreneurs. Plus d'appels manqués, plus de temps perdu.
           </p>
 
           {/* Value Prop - hidden on mobile for shorter page */}
@@ -45,16 +45,14 @@ const HeroSection = () => {
             On commence par les appels, puis on automatise tout ce qui vous fait perdre du temps et de l'argent.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center animate-fade-up px-4" style={{ animationDelay: "0.4s" }}>
-            <Button variant="hero" size="xl" className="shadow-[0_0_40px_-10px_hsl(var(--primary)/0.6)] hover:shadow-[0_0_50px_-5px_hsl(var(--primary)/0.8)] transition-all duration-500">
-              Réserver un audit gratuit
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button variant="heroOutline" size="xl" className="border-primary/40 hover:border-primary hover:bg-primary/10">
-              <Phone className="w-5 h-5" />
-              Voir une démo
-            </Button>
+          {/* CTA Button */}
+          <div className="flex justify-center animate-fade-up px-4" style={{ animationDelay: "0.4s" }}>
+            <a href="https://link.nuvra-automation.com/widget/booking/TSKHG4iPAUloDCyxhAqH" target="_blank" rel="noopener noreferrer">
+              <Button variant="hero" size="xl" className="shadow-[0_0_40px_-10px_hsl(var(--primary)/0.6)] hover:shadow-[0_0_50px_-5px_hsl(var(--primary)/0.8)] transition-all duration-500">
+                Réserver un audit gratuit
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </a>
           </div>
 
           {/* Trust Indicators */}

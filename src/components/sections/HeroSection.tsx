@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
+  const { t, bookingLink } = useLanguage();
+
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex items-center bg-hero overflow-hidden pt-20">
       {/* Premium Background Effects */}
@@ -22,34 +25,34 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-secondary/80 border border-primary/30 mb-6 md:mb-8 animate-fade-up backdrop-blur-sm shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)]">
             <Zap className="w-3 h-3 md:w-4 md:h-4 text-primary" />
             <span className="text-xs md:text-sm font-medium text-foreground/90">
-              Système IA installé en 7 jours
+              {t("hero.badge")}
             </span>
           </div>
 
           {/* Headline */}
           <h1 className="text-3xl md:text-6xl lg:text-7xl font-black leading-tight mb-4 md:mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Chaque appel manqué vous coûte{" "}
+            {t("hero.title1")}{" "}
             <span className="text-gradient relative">
-              de l'argent
+              {t("hero.title2")}
               <span className="absolute -inset-1 bg-primary/10 blur-2xl -z-10 rounded-full" />
             </span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 md:mb-8 animate-fade-up px-2" style={{ animationDelay: "0.2s" }}>
-            Installation d'un système d'automatisation IA complet pour entrepreneurs. Plus d'appels manqués, plus de temps perdu.
+            {t("hero.subtitle")}
           </p>
 
           {/* Value Prop - hidden on mobile for shorter page */}
           <p className="hidden md:block text-base text-foreground/80 max-w-xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            On commence par les appels, puis on automatise tout ce qui vous fait perdre du temps et de l'argent.
+            {t("hero.valueProp")}
           </p>
 
           {/* CTA Button */}
           <div className="flex justify-center animate-fade-up px-4" style={{ animationDelay: "0.4s" }}>
-            <a href="https://link.nuvra-automation.com/widget/booking/TSKHG4iPAUloDCyxhAqH" target="_blank" rel="noopener noreferrer">
+            <a href={bookingLink} target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="xl" className="shadow-[0_0_40px_-10px_hsl(var(--primary)/0.6)] hover:shadow-[0_0_50px_-5px_hsl(var(--primary)/0.8)] transition-all duration-500">
-                Réserver un audit gratuit
+                {t("hero.cta")}
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </a>
@@ -59,24 +62,24 @@ const HeroSection = () => {
           <div className="mt-12 md:mt-16 flex flex-wrap justify-center gap-6 md:gap-8 animate-fade-up" style={{ animationDelay: "0.5s" }}>
             <div className="text-center group">
               <div className="relative">
-                <p className="text-2xl md:text-3xl font-bold text-gradient">7 jours</p>
+                <p className="text-2xl md:text-3xl font-bold text-gradient">{t("hero.stat1")}</p>
                 <span className="absolute -inset-2 bg-primary/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <p className="text-xs md:text-sm text-muted-foreground">Installation complète</p>
+              <p className="text-xs md:text-sm text-muted-foreground">{t("hero.stat1Label")}</p>
             </div>
             <div className="text-center group">
               <div className="relative">
-                <p className="text-2xl md:text-3xl font-bold text-gradient">24/7</p>
+                <p className="text-2xl md:text-3xl font-bold text-gradient">{t("hero.stat2")}</p>
                 <span className="absolute -inset-2 bg-primary/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <p className="text-xs md:text-sm text-muted-foreground">Automatisation active</p>
+              <p className="text-xs md:text-sm text-muted-foreground">{t("hero.stat2Label")}</p>
             </div>
             <div className="text-center group">
               <div className="relative">
-                <p className="text-2xl md:text-3xl font-bold text-gradient">100%</p>
+                <p className="text-2xl md:text-3xl font-bold text-gradient">{t("hero.stat3")}</p>
                 <span className="absolute -inset-2 bg-primary/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <p className="text-xs md:text-sm text-muted-foreground">Appels captés</p>
+              <p className="text-xs md:text-sm text-muted-foreground">{t("hero.stat3Label")}</p>
             </div>
           </div>
         </div>

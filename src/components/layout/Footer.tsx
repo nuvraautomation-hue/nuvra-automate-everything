@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
 import logoNuvra from "@/assets/logo-nuvra.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-card border-t border-primary/20 py-16 relative overflow-hidden">
       {/* Premium gold glow effect */}
@@ -16,14 +19,14 @@ const Footer = () => {
               <img src={logoNuvra} alt="Nuvra Automation" className="h-16 w-auto" />
             </Link>
             <p className="text-muted-foreground max-w-sm">
-              Système d'automatisation IA complet pour entrepreneurs. Installé en 7 jours.
+              {t("footer.description")}
             </p>
           </div>
 
           {/* Contact */}
           <div>
             <h4 className="font-semibold text-foreground mb-4 relative inline-block">
-              Contact
+              {t("footer.contact")}
               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-to-r from-primary to-primary/50" />
             </h4>
             <ul className="space-y-3 mt-6">
@@ -51,7 +54,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2024 Nuvra Automation inc. Tous droits réservés.
+            {t("footer.rights")}
           </p>
         </div>
       </div>

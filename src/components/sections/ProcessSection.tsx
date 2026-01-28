@@ -1,33 +1,36 @@
 import { Search, Mic, Workflow, TrendingUp } from "lucide-react";
-
-const steps = [
-  {
-    number: "01",
-    icon: Search,
-    title: "Audit rapide",
-    description: "Analyse de vos processus actuels et identification des opportunités d'automatisation.",
-  },
-  {
-    number: "02",
-    icon: Mic,
-    title: "Installation agent vocal",
-    description: "Déploiement de votre agent IA personnalisé. Opérationnel en 48h.",
-  },
-  {
-    number: "03",
-    icon: Workflow,
-    title: "Automatisation complète",
-    description: "Configuration des workflows, CRM, suivis et intégrations sur mesure.",
-  },
-  {
-    number: "04",
-    icon: TrendingUp,
-    title: "Optimisation continue",
-    description: "Monitoring, ajustements et amélioration continue de vos performances.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ProcessSection = () => {
+  const { t } = useLanguage();
+
+  const steps = [
+    {
+      number: "01",
+      icon: Search,
+      titleKey: "process.step1.title",
+      descKey: "process.step1.desc",
+    },
+    {
+      number: "02",
+      icon: Mic,
+      titleKey: "process.step2.title",
+      descKey: "process.step2.desc",
+    },
+    {
+      number: "03",
+      icon: Workflow,
+      titleKey: "process.step3.title",
+      descKey: "process.step3.desc",
+    },
+    {
+      number: "04",
+      icon: TrendingUp,
+      titleKey: "process.step4.title",
+      descKey: "process.step4.desc",
+    },
+  ];
+
   return (
     <section className="py-16 md:py-24 bg-card relative overflow-hidden">
       {/* Premium background effects */}
@@ -40,10 +43,10 @@ const ProcessSection = () => {
         {/* Header */}
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-2xl md:text-5xl font-bold mb-4">
-            Notre <span className="text-gradient">processus</span>
+            {t("process.title1")} <span className="text-gradient">{t("process.title2")}</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            De l'audit à l'optimisation, un accompagnement complet en 7 jours.
+            {t("process.subtitle")}
           </p>
         </div>
 
@@ -69,8 +72,8 @@ const ProcessSection = () => {
                     <step.icon className="w-5 h-5 md:w-7 md:h-7 text-primary" />
                   </div>
 
-                  <h3 className="text-sm md:text-xl font-semibold mb-2 md:mb-3 text-foreground relative z-10">{step.title}</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground relative z-10 leading-tight">{step.description}</p>
+                  <h3 className="text-sm md:text-xl font-semibold mb-2 md:mb-3 text-foreground relative z-10">{t(step.titleKey)}</h3>
+                  <p className="text-xs md:text-sm text-muted-foreground relative z-10 leading-tight">{t(step.descKey)}</p>
                 </div>
               </div>
             ))}

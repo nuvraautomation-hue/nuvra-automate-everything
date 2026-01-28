@@ -3,13 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logoNuvra from "@/assets/logo-nuvra.png";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t, bookingLink } = useLanguage();
 
   const navLinks = [
-    { href: "/", label: "Accueil" },
+    { href: "/", label: t("nav.home") },
   ];
 
   return (
@@ -38,22 +41,26 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:block">
-            <a href="https://link.nuvra-automation.com/widget/booking/TSKHG4iPAUloDCyxhAqH" target="_blank" rel="noopener noreferrer">
+          {/* Language Toggle + CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            <LanguageToggle />
+            <a href={bookingLink} target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="default">
-                Réserver un audit
+                {t("nav.book")}
               </Button>
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageToggle />
+            <button
+              className="text-foreground"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -74,9 +81,9 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <a href="https://link.nuvra-automation.com/widget/booking/TSKHG4iPAUloDCyxhAqH" target="_blank" rel="noopener noreferrer" className="mt-4">
+              <a href={bookingLink} target="_blank" rel="noopener noreferrer" className="mt-4">
                 <Button variant="hero" size="default" className="w-full">
-                  Réserver un audit
+                  {t("nav.book")}
                 </Button>
               </a>
             </nav>

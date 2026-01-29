@@ -14,6 +14,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Header
     "nav.home": "Accueil",
     "nav.about": "À propos",
+    "nav.fit": "Pour vous?",
     "nav.book": "Réserver un audit",
     
     // Hero
@@ -74,6 +75,31 @@ const translations: Record<Language, Record<string, string>> = {
     "about.founder.text1": "Passionné par l'entrepreneuriat. J'aime comprendre vos idées, vos blocages et vos objectifs afin de transformer tout cela en projets concrets qui ont du sens.",
     "about.founder.text2": "Mon truc à moi : écouter, simplifier et passer à l'action à vos côtés.",
     
+    // Is Nuvra For You Page
+    "fit.title1": "Est-ce que Nuvra est fait pour",
+    "fit.title2": "votre entreprise?",
+    "fit.intro": "Nuvra n'est pas pour tout le monde. Notre solution s'adresse aux entreprises qui veulent structurer et automatiser leurs opérations pour augmenter leur rendement de façon durable.",
+    "fit.idealTitle": "Idéal pour",
+    "fit.ideal1": "Entreprises avec un volume d'appels entrants ou de demandes régulières",
+    "fit.ideal2": "Services professionnels (consultants, agences, cabinets)",
+    "fit.ideal3": "PME en croissance qui veulent structurer leurs opérations",
+    "fit.ideal4": "Équipes débordées qui perdent du temps sur des tâches répétitives",
+    "fit.ideal5": "Entreprises qui perdent des opportunités par manque de suivi",
+    "fit.notIdealTitle": "Pas idéal pour",
+    "fit.notIdeal1": "Entreprises sans appels ou demandes entrantes régulières",
+    "fit.notIdeal2": "Projets ponctuels ou besoins temporaires",
+    "fit.notIdeal3": "Entreprises cherchant une solution expérimentale sans engagement",
+    "fit.examplesTitle": "Situations concrètes",
+    "fit.example1.situation": "« On manque des appels parce que l'équipe est occupée sur le terrain. »",
+    "fit.example1.solution": "L'agent vocal répond 24/7, qualifie le lead et planifie le rendez-vous automatiquement.",
+    "fit.example2.situation": "« On oublie de faire les suivis après les soumissions. »",
+    "fit.example2.solution": "Des relances automatiques sont envoyées selon un calendrier précis jusqu'à obtenir une réponse.",
+    "fit.example3.situation": "« On reçoit beaucoup de demandes non qualifiées qui nous font perdre du temps. »",
+    "fit.example3.solution": "L'IA qualifie chaque demande avant de l'acheminer, filtrant les opportunités sérieuses.",
+    "fit.ctaTitle": "Pas certain si c'est pour vous?",
+    "fit.ctaSubtitle": "Réservez un audit gratuit de 15 minutes. On valide ensemble si Nuvra peut vraiment vous aider.",
+    "fit.ctaButton": "Réserver mon audit gratuit",
+    
     // Footer
     "footer.description": "Système d'automatisation IA complet pour entrepreneurs. Installé en 7 jours.",
     "footer.contact": "Contact",
@@ -83,6 +109,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Header
     "nav.home": "Home",
     "nav.about": "About",
+    "nav.fit": "For you?",
     "nav.book": "Book an audit",
     
     // Hero
@@ -142,6 +169,31 @@ const translations: Record<Language, Record<string, string>> = {
     "about.founder.greeting": "My name is",
     "about.founder.text1": "Passionate about entrepreneurship. I love understanding your ideas, your challenges, and your goals to transform them into meaningful concrete projects.",
     "about.founder.text2": "My thing: listening, simplifying, and taking action by your side.",
+    
+    // Is Nuvra For You Page
+    "fit.title1": "Is Nuvra right for",
+    "fit.title2": "your business?",
+    "fit.intro": "Nuvra isn't for everyone. Our solution is designed for businesses that want to structure and automate their operations to sustainably increase their performance.",
+    "fit.idealTitle": "Ideal for",
+    "fit.ideal1": "Businesses with regular incoming calls or requests",
+    "fit.ideal2": "Professional services (consultants, agencies, firms)",
+    "fit.ideal3": "Growing SMBs looking to structure their operations",
+    "fit.ideal4": "Overwhelmed teams losing time on repetitive tasks",
+    "fit.ideal5": "Businesses missing opportunities due to lack of follow-up",
+    "fit.notIdealTitle": "Not ideal for",
+    "fit.notIdeal1": "Businesses without regular incoming calls or requests",
+    "fit.notIdeal2": "One-time projects or temporary needs",
+    "fit.notIdeal3": "Businesses looking for an experimental, no-commitment solution",
+    "fit.examplesTitle": "Real-world situations",
+    "fit.example1.situation": "\"We miss calls because the team is busy in the field.\"",
+    "fit.example1.solution": "The voice agent answers 24/7, qualifies the lead, and schedules the appointment automatically.",
+    "fit.example2.situation": "\"We forget to follow up after sending quotes.\"",
+    "fit.example2.solution": "Automatic follow-ups are sent on a precise schedule until a response is received.",
+    "fit.example3.situation": "\"We receive many unqualified requests that waste our time.\"",
+    "fit.example3.solution": "AI qualifies each request before routing it, filtering out serious opportunities.",
+    "fit.ctaTitle": "Not sure if it's for you?",
+    "fit.ctaSubtitle": "Book a free 15-minute audit. We'll validate together if Nuvra can truly help you.",
+    "fit.ctaButton": "Book my free audit",
     
     // Footer
     "footer.description": "Complete AI automation system for entrepreneurs. Installed in 7 days.",

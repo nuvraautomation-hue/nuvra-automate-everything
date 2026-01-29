@@ -13,6 +13,7 @@ const translations: Record<Language, Record<string, string>> = {
   fr: {
     // Header
     "nav.home": "Accueil",
+    "nav.about": "À propos",
     "nav.book": "Réserver un audit",
     
     // Hero
@@ -63,6 +64,16 @@ const translations: Record<Language, Record<string, string>> = {
     "cta.subtitle": "Réservez un audit gratuit de 15 minutes. On analyse vos processus et on vous montre exactement ce qu'on peut automatiser.",
     "cta.button": "Réserver mon audit gratuit",
     
+    // About Page
+    "about.title1": "À propos de",
+    "about.title2": "Nuvra",
+    "about.company.title": "À propos de Nuvra",
+    "about.company.text1": "Nuvra Automation a été fondée pour aider les entreprises à augmenter leur rendement et à se préparer concrètement à l'avenir.",
+    "about.company.text2": "Dans un monde en constante évolution, nous mettons en place des systèmes intelligents qui simplifient les opérations, éliminent les frictions et permettent aux entreprises d'avancer plus efficacement vers le futur.",
+    "about.founder.greeting": "Je m'appelle",
+    "about.founder.text1": "Passionné par l'entrepreneuriat. J'aime comprendre vos idées, vos blocages et vos objectifs afin de transformer tout cela en projets concrets qui ont du sens.",
+    "about.founder.text2": "Mon truc à moi : écouter, simplifier et passer à l'action à vos côtés.",
+    
     // Footer
     "footer.description": "Système d'automatisation IA complet pour entrepreneurs. Installé en 7 jours.",
     "footer.contact": "Contact",
@@ -71,6 +82,7 @@ const translations: Record<Language, Record<string, string>> = {
   en: {
     // Header
     "nav.home": "Home",
+    "nav.about": "About",
     "nav.book": "Book an audit",
     
     // Hero
@@ -120,6 +132,16 @@ const translations: Record<Language, Record<string, string>> = {
     "cta.title3": "your business?",
     "cta.subtitle": "Book a free 15-minute audit. We analyze your processes and show you exactly what we can automate.",
     "cta.button": "Book my free audit",
+    
+    // About Page
+    "about.title1": "About",
+    "about.title2": "Nuvra",
+    "about.company.title": "About Nuvra",
+    "about.company.text1": "Nuvra Automation was founded to help businesses increase their efficiency and concretely prepare for the future.",
+    "about.company.text2": "In a constantly evolving world, we implement intelligent systems that simplify operations, eliminate friction, and enable businesses to move more efficiently toward the future.",
+    "about.founder.greeting": "My name is",
+    "about.founder.text1": "Passionate about entrepreneurship. I love understanding your ideas, your challenges, and your goals to transform them into meaningful concrete projects.",
+    "about.founder.text2": "My thing: listening, simplifying, and taking action by your side.",
     
     // Footer
     "footer.description": "Complete AI automation system for entrepreneurs. Installed in 7 days.",

@@ -67,13 +67,13 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-6 border-t border-border">
-            <nav className="flex flex-col gap-4">
+          <div className="md:hidden py-6 border-t border-border animate-fade-in">
+            <nav className="flex flex-col items-center gap-5">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-base font-medium transition-all duration-300 ${
                     location.pathname === link.href
                       ? "text-primary"
                       : "text-muted-foreground hover:text-foreground"
@@ -83,7 +83,7 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <a href={bookingLink} target="_blank" rel="noopener noreferrer" className="mt-4">
+              <a href={bookingLink} target="_blank" rel="noopener noreferrer" className="mt-2 w-full max-w-xs">
                 <Button variant="hero" size="default" className="w-full">
                   {t("nav.book")}
                 </Button>

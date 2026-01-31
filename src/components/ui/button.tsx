@@ -10,17 +10,17 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-gradient-to-r from-[hsl(48_100%_50%)] via-[hsl(43_90%_45%)] to-[hsl(38_85%_40%)] text-black shadow-[0_0_25px_-5px_hsl(48_100%_50%_/_0.6),inset_0_1px_0_hsl(48_100%_70%_/_0.4)] hover:scale-105 hover:shadow-[0_0_35px_-5px_hsl(48_100%_50%_/_0.8),inset_0_1px_0_hsl(48_100%_70%_/_0.5)]",
+          "bg-gradient-to-r from-[hsl(42_85%_52%)] via-[hsl(38_80%_45%)] to-[hsl(32_75%_38%)] text-black shadow-[0_0_25px_-5px_hsl(40_85%_50%_/_0.6),inset_0_1px_0_hsl(42_85%_65%_/_0.4)] hover:scale-105 hover:shadow-[0_0_35px_-5px_hsl(40_85%_50%_/_0.8),inset_0_1px_0_hsl(42_85%_70%_/_0.5)]",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border-2 border-[hsl(48_100%_50%_/_0.5)] bg-transparent text-foreground hover:bg-[hsl(48_100%_50%_/_0.1)] hover:border-[hsl(48_100%_50%_/_0.8)] hover:shadow-[0_0_20px_-5px_hsl(48_100%_50%_/_0.4)]",
+          "border-2 border-[hsl(40_85%_50%_/_0.5)] bg-transparent text-foreground hover:bg-[hsl(40_85%_50%_/_0.1)] hover:border-[hsl(40_85%_50%_/_0.8)] hover:shadow-[0_0_20px_-5px_hsl(40_85%_50%_/_0.4)]",
         secondary:
-          "bg-gradient-to-r from-[hsl(0_0%_8%)] to-[hsl(0_0%_12%)] text-foreground shadow-sm border border-[hsl(48_100%_50%_/_0.3)] hover:border-[hsl(48_100%_50%_/_0.6)] hover:shadow-[0_0_20px_-8px_hsl(48_100%_50%_/_0.4)]",
-        ghost: "text-foreground hover:bg-[hsl(48_100%_50%_/_0.1)] hover:text-[hsl(48_100%_55%)]",
-        link: "text-[hsl(48_100%_55%)] underline-offset-4 hover:underline",
-        hero: "bg-gradient-to-r from-[hsl(50_100%_55%)] via-[hsl(45_95%_50%)] to-[hsl(40_90%_42%)] text-black font-bold shadow-[0_0_40px_-8px_hsl(50_100%_55%_/_0.7),0_0_80px_-15px_hsl(45_95%_50%_/_0.4),inset_0_2px_0_hsl(50_100%_70%_/_0.5)] hover:scale-105 hover:shadow-[0_0_50px_-5px_hsl(50_100%_55%_/_0.9),0_0_100px_-20px_hsl(45_95%_50%_/_0.6),inset_0_2px_0_hsl(50_100%_75%_/_0.6)] border border-[hsl(50_100%_65%_/_0.3)]",
-        heroOutline: "border-2 border-[hsl(48_100%_50%_/_0.6)] bg-transparent text-foreground font-semibold hover:bg-[hsl(48_100%_50%_/_0.1)] hover:border-[hsl(48_100%_55%)] hover:shadow-[0_0_30px_-8px_hsl(48_100%_50%_/_0.5)]",
+          "bg-gradient-to-r from-[hsl(0_0%_8%)] to-[hsl(0_0%_12%)] text-foreground shadow-sm border border-[hsl(40_85%_50%_/_0.3)] hover:border-[hsl(40_85%_50%_/_0.6)] hover:shadow-[0_0_20px_-8px_hsl(40_85%_50%_/_0.4)]",
+        ghost: "text-foreground hover:bg-[hsl(40_85%_50%_/_0.1)] hover:text-[hsl(42_85%_55%)]",
+        link: "text-[hsl(42_85%_55%)] underline-offset-4 hover:underline",
+        hero: "bg-gradient-to-r from-[hsl(42_85%_52%)] via-[hsl(38_80%_45%)] to-[hsl(32_75%_38%)] text-black font-bold shadow-[0_0_40px_-8px_hsl(40_85%_50%_/_0.7),0_0_80px_-15px_hsl(38_80%_45%_/_0.4),inset_0_2px_0_hsl(42_85%_65%_/_0.5)] hover:scale-105 hover:shadow-[0_0_50px_-5px_hsl(40_85%_50%_/_0.9),0_0_100px_-20px_hsl(38_80%_45%_/_0.6),inset_0_2px_0_hsl(42_85%_70%_/_0.6)] border border-[hsl(42_85%_60%_/_0.3)]",
+        heroOutline: "border-2 border-[hsl(40_85%_50%_/_0.6)] bg-transparent text-foreground font-semibold hover:bg-[hsl(40_85%_50%_/_0.1)] hover:border-[hsl(42_85%_55%)] hover:shadow-[0_0_30px_-8px_hsl(40_85%_50%_/_0.5)]",
       },
       size: {
         default: "h-11 px-6 py-2",

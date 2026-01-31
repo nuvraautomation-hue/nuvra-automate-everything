@@ -1,4 +1,4 @@
-import { Phone, Calendar, Users, Bell, Database, BarChart3 } from "lucide-react";
+import { MessageSquare, Calendar, Users, Workflow } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const AutomationSection = () => {
@@ -6,7 +6,7 @@ const AutomationSection = () => {
 
   const automations = [
     {
-      icon: Phone,
+      icon: MessageSquare,
       titleKey: "automation.feature1.title",
       descKey: "automation.feature1.desc",
     },
@@ -21,7 +21,7 @@ const AutomationSection = () => {
       descKey: "automation.feature3.desc",
     },
     {
-      icon: Bell,
+      icon: Workflow,
       titleKey: "automation.feature4.title",
       descKey: "automation.feature4.desc",
     },

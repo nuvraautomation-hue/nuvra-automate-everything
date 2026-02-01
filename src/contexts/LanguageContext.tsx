@@ -50,19 +50,19 @@ const translations: Record<Language, Record<string, string>> = {
     "process.subtitle": "De l'audit à l'automatisation complète en 7 jours.",
     "process.step1.title": "Audit gratuit",
     "process.step1.desc": "On analyse vos processus et identifie les opportunités d'automatisation.",
-    "process.step2.title": "Installation agent",
-    "process.step2.desc": "Déploiement de l'agent vocal IA personnalisé à votre entreprise.",
+    "process.step2.title": "Déploiement",
+    "process.step2.desc": "Installation et configuration de vos systèmes d'automatisation personnalisés.",
     "process.step3.title": "Automatisation",
     "process.step3.desc": "Connexion CRM, workflows, suivis automatiques activés.",
     "process.step4.title": "Optimisation",
     "process.step4.desc": "Ajustements continus basés sur les performances réelles.",
     
     // CTA Section
-    "cta.badge": "Audit gratuit de 15 minutes",
+    "cta.badge": "Audit gratuit de 30 minutes",
     "cta.title1": "Prêt à",
     "cta.title2": "automatiser",
     "cta.title3": "votre business?",
-    "cta.subtitle": "Réservez un audit gratuit de 15 minutes. On analyse vos processus et on vous montre exactement ce qu'on peut automatiser.",
+    "cta.subtitle": "Réservez un audit gratuit de 30 minutes. On analyse vos processus et on vous montre exactement ce qu'on peut automatiser.",
     "cta.button": "Réserver mon audit gratuit",
     
     // About Page
@@ -97,7 +97,7 @@ const translations: Record<Language, Record<string, string>> = {
     "fit.example3.situation": "« On reçoit beaucoup de demandes non qualifiées qui nous font perdre du temps. »",
     "fit.example3.solution": "L'IA qualifie chaque demande avant de l'acheminer, filtrant les opportunités sérieuses.",
     "fit.ctaTitle": "Pas certain si c'est pour vous?",
-    "fit.ctaSubtitle": "Réservez un audit gratuit de 15 minutes. On valide ensemble si Nuvra peut vraiment vous aider.",
+    "fit.ctaSubtitle": "Réservez un audit gratuit de 30 minutes. On valide ensemble si Nuvra peut vraiment vous aider.",
     "fit.ctaButton": "Réserver mon audit gratuit",
     
     // Footer
@@ -145,19 +145,19 @@ const translations: Record<Language, Record<string, string>> = {
     "process.subtitle": "From audit to complete automation in 7 days.",
     "process.step1.title": "Free audit",
     "process.step1.desc": "We analyze your processes and identify automation opportunities.",
-    "process.step2.title": "Agent setup",
-    "process.step2.desc": "Deployment of AI voice agent customized to your business.",
+    "process.step2.title": "Deployment",
+    "process.step2.desc": "Installation and configuration of your custom automation systems.",
     "process.step3.title": "Automation",
     "process.step3.desc": "CRM connection, workflows, automatic follow-ups activated.",
     "process.step4.title": "Optimization",
     "process.step4.desc": "Continuous adjustments based on real performance.",
     
     // CTA Section
-    "cta.badge": "15-minute free audit",
+    "cta.badge": "30-minute free audit",
     "cta.title1": "Ready to",
     "cta.title2": "automate",
     "cta.title3": "your business?",
-    "cta.subtitle": "Book a free 15-minute audit. We analyze your processes and show you exactly what we can automate.",
+    "cta.subtitle": "Book a free 30-minute audit. We analyze your processes and show you exactly what we can automate.",
     "cta.button": "Book my free audit",
     
     // About Page
@@ -192,7 +192,7 @@ const translations: Record<Language, Record<string, string>> = {
     "fit.example3.situation": "\"We receive many unqualified requests that waste our time.\"",
     "fit.example3.solution": "AI qualifies each request before routing it, filtering out serious opportunities.",
     "fit.ctaTitle": "Not sure if it's for you?",
-    "fit.ctaSubtitle": "Book a free 15-minute audit. We'll validate together if Nuvra can truly help you.",
+    "fit.ctaSubtitle": "Book a free 30-minute audit. We'll validate together if Nuvra can truly help you.",
     "fit.ctaButton": "Book my free audit",
     
     // Footer

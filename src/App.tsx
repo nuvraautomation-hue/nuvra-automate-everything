@@ -9,6 +9,9 @@ import About from "./pages/About";
 import IsNuvraForYou from "./pages/IsNuvraForYou";
 import NotFound from "./pages/NotFound";
 
+// 👇 AJOUTÉ : import du composant que TU as déjà créé
+import GhlFormPopup from "@/components/GhlFormPopup";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -17,6 +20,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -25,6 +29,10 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+
+        {/* 👇 AJOUTÉ : appel du pop-up AU BON ENDROIT */}
+        <GhlFormPopup />
+
       </TooltipProvider>
     </LanguageProvider>
   </QueryClientProvider>

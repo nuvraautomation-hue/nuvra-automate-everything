@@ -62,6 +62,7 @@ export default function GhlFormPopup() {
                 style={s.iframe}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                allow="clipboard-write; fullscreen"
               />
             </div>
 
@@ -70,6 +71,11 @@ export default function GhlFormPopup() {
                 Fermer
               </button>
             </div>
+
+            <p style={s.fineprint}>
+              En continuant, tu acceptes de recevoir des communications par courriel/SMS.
+              Désinscription en tout temps.
+            </p>
           </div>
         </div>
       )}
@@ -156,3 +162,11 @@ const s: Record<string, React.CSSProperties> = {
     color: "#fff",
     cursor: "pointer",
     fontWeight: 700,
+  },
+  fineprint: {
+    margin: "12px 0 0",
+    fontSize: 12,
+    color: "rgba(255,255,255,.55)",
+  },
+};
+

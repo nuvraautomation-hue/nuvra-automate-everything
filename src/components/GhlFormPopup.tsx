@@ -3,10 +3,14 @@ import { useEffect, useMemo, useState } from "react";
 const FORM_URL =
   "https://link.nuvra-automation.com/widget/form/3co3chEFZbK0Oh7i6eGM?notrack=true";
 
+// Ajuste ces valeurs si tu veux
+const AUTO_OPEN_MS = 1200; // s’ouvre tout seul après 1.2s
+const DISMISS_DAYS = 7;    // si la personne ferme, on ne réaffiche pas pendant 7 jours
+
 export default function GhlFormPopup() {
   const [open, setOpen] = useState(false);
 
-  const storageKey = useMemo(() => "nuvra_ghl_popup_dismissed_until_v1", []);
+  const storageKey = useMemo(() => "nuvra_newsletter_popup_dismissed_until_v1", []);
   const isDismissed = useMemo(() => {
     const raw = localStorage.getItem(storageKey);
     const until = raw ? Number(raw) : 0;
@@ -14,16 +18,21 @@ export default function GhlFormPopup() {
   }, [storageKey]);
 
   const dismiss = () => {
-    const days = 3;
-    const until = Date.now() + days * 24 * 60 * 60 * 1000;
+    const until = Date.now() + DISMISS_DAYS * 24 * 60 * 60 * 1000;
     localStorage.setItem(storageKey, String(until));
     setOpen(false);
   };
 
-  const openPopup = () => {
-    if (!isDismissed) setOpen(true);
-  };
+  // Auto-open
+  useEffect(() => {
+    if (AUTO_OPEN_MS <= 0) return;
+    if (isDismissed) return;
 
+    const t = window.setTimeout(() => setOpen(true), AUTO_OPEN_MS);
+    return () => window.clearTimeout(t);
+  }, [isDismissed]);
+
+  // ESC to close
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" && open) dismiss();
@@ -33,70 +42,72 @@ export default function GhlFormPopup() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
+  // ✅ Fix décalage horizontal: lock scroll + compense la scrollbar
+  useEffect(() => {
+    if (!open) return;
+
+    const body = document.body;
+    const html = document.documentElement;
+
+    const prevOverflow = body.style.overflow;
+    const prevPaddingRight = body.style.paddingRight;
+
+    const scrollbarWidth = window.innerWidth - html.clientWidth;
+
+    body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) body.style.paddingRight = `${scrollbarWidth}px`;
+
+    return () => {
+      body.style.overflow = prevOverflow;
+      body.style.paddingRight = prevPaddingRight;
+    };
+  }, [open]);
+
+  if (!open) return null;
+
   return (
-    <>
-      <button type="button" onClick={openPopup} style={s.trigger}>
-        Obtenir l’analyse
-      </button>
+    <div
+      style={s.overlay}
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) dismiss();
+      }}
+    >
+      <div style={s.modal} role="dialog" aria-modal="true">
+        <button type="button" onClick={dismiss} style={s.close} aria-label="Fermer">
+          ×
+        </button>
 
-      {open && (
-        <div
-          style={s.overlay}
-          onMouseDown={(e) => {
-            if (e.target === e.currentTarget) dismiss();
-          }}
-        >
-          <div style={s.modal} role="dialog" aria-modal="true">
-            <button type="button" onClick={dismiss} style={s.close} aria-label="Fermer">
-              ×
-            </button>
+        <div style={s.badge}>INFOLETTRE</div>
+        <h2 style={s.title}>Reçois nos meilleurs insights (1–2x/semaine).</h2>
+        <p style={s.subtitle}>
+          Automatisation, IA, templates, et stratégies concrètes — zéro spam.
+        </p>
 
-            <div style={s.badge}>FORMULAIRE</div>
-            <h2 style={s.title}>Remplis ça en 60 secondes.</h2>
-            <p style={s.subtitle}>Après l’envoi, tu peux fermer cette page.</p>
-
-            <div style={s.iframeWrap}>
-              <iframe
-                title="Nuvra Form"
-                src={FORM_URL}
-                style={s.iframe}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allow="clipboard-write; fullscreen"
-              />
-            </div>
-
-            <div style={s.footerRow}>
-              <button type="button" onClick={dismiss} style={s.secondary}>
-                Fermer
-              </button>
-            </div>
-
-            <p style={s.fineprint}>
-              En continuant, tu acceptes de recevoir des communications par courriel/SMS.
-              Désinscription en tout temps.
-            </p>
-          </div>
+        <div style={s.iframeWrap}>
+          <iframe
+            title="Nuvra Newsletter"
+            src={FORM_URL}
+            style={s.iframe}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
-      )}
-    </>
+
+        <div style={s.footerRow}>
+          <button type="button" onClick={dismiss} style={s.secondary}>
+            Pas maintenant
+          </button>
+        </div>
+
+        <p style={s.fineprint}>
+          En t’inscrivant, tu acceptes de recevoir des courriels. Désinscription en tout temps.
+        </p>
+      </div>
+    </div>
   );
 }
 
 const s: Record<string, React.CSSProperties> = {
-  trigger: {
-    position: "fixed",
-    right: 18,
-    bottom: 18,
-    zIndex: 9998,
-    borderRadius: 14,
-    padding: "12px 14px",
-    fontWeight: 800,
-    border: "1px solid rgba(212,175,55,.35)",
-    background: "linear-gradient(135deg, rgba(212,175,55,1), rgba(170,130,20,1))",
-    color: "#0b0b0b",
-    cursor: "pointer",
-  },
   overlay: {
     position: "fixed",
     inset: 0,
@@ -109,7 +120,7 @@ const s: Record<string, React.CSSProperties> = {
     backdropFilter: "blur(8px)",
   },
   modal: {
-    width: "min(900px, 100%)",
+    width: "min(860px, 100%)",
     background: "rgba(12,12,12,.94)",
     border: "1px solid rgba(212,175,55,.35)",
     borderRadius: 18,
@@ -146,7 +157,7 @@ const s: Record<string, React.CSSProperties> = {
   subtitle: { margin: "0 0 14px", color: "rgba(255,255,255,.78)", fontSize: 14.5 },
   iframeWrap: {
     width: "100%",
-    height: "min(78vh, 720px)",
+    height: "min(72vh, 680px)",
     borderRadius: 14,
     overflow: "hidden",
     border: "1px solid rgba(255,255,255,.08)",
@@ -169,4 +180,5 @@ const s: Record<string, React.CSSProperties> = {
     color: "rgba(255,255,255,.55)",
   },
 };
+
 

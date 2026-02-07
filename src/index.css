@@ -69,6 +69,10 @@
 }
 
 @layer components {
+    .section-container {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+
   .text-gradient {
     background: var(--gradient-text);
     -webkit-background-clip: text;

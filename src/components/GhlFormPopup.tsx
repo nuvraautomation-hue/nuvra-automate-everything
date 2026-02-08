@@ -1,16 +1,26 @@
 import { useEffect, useMemo, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const FORM_URL =
+const FORM_URL_FR =
   "https://link.nuvra-automation.com/widget/form/3co3chEFZbK0Oh7i6eGM?notrack=true";
 
-// Ajuste ces valeurs si tu veux
-const AUTO_OPEN_MS = 1200; // s’ouvre tout seul après 1.2s
-const DISMISS_DAYS = 7;    // si la personne ferme, on ne réaffiche pas pendant 7 jours
+const FORM_URL_EN =
+  "https://link.nuvra-automation.com/widget/form/ndyQYG75r4lh6U0m6STZ?notrack=true";
+
+const AUTO_OPEN_MS = 1200;
+const DISMISS_DAYS = 7;
 
 export default function GhlFormPopup() {
+  const { language } = useLanguage(); // suppose "fr" | "en"
   const [open, setOpen] = useState(false);
 
-  const storageKey = useMemo(() => "nuvra_newsletter_popup_dismissed_until_v1", []);
+  const formUrl = language === "en" ? FORM_URL_EN : FORM_URL_FR;
+
+  const storageKey = useMemo(
+    () => `nuvra_newsletter_popup_dismissed_until_v3_${language}`,
+    [language]
+  );
+
   const isDismissed = useMemo(() => {
     const raw = localStorage.getItem(storageKey);
     const until = raw ? Number(raw) : 0;
@@ -23,7 +33,7 @@ export default function GhlFormPopup() {
     setOpen(false);
   };
 
-  // Auto-open
+  // Auto-open (selon langue courante)
   useEffect(() => {
     if (AUTO_OPEN_MS <= 0) return;
     if (isDismissed) return;
@@ -31,6 +41,16 @@ export default function GhlFormPopup() {
     const t = window.setTimeout(() => setOpen(true), AUTO_OPEN_MS);
     return () => window.clearTimeout(t);
   }, [isDismissed]);
+
+  // Ouvre automatiquement si la personne switch en anglais
+  const prevLangKey = "nuvra_prev_lang_v1";
+  useEffect(() => {
+    const prev = localStorage.getItem(prevLangKey) || "fr";
+    if (prev !== language) {
+      localStorage.setItem(prevLangKey, language);
+      if (language === "en" && !isDismissed) setOpen(true);
+    }
+  }, [language, isDismissed]);
 
   // ESC to close
   useEffect(() => {
@@ -42,7 +62,7 @@ export default function GhlFormPopup() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
-  // ✅ Fix décalage horizontal: lock scroll + compense la scrollbar
+  // Lock scroll + compense scrollbar (anti-shift)
   useEffect(() => {
     if (!open) return;
 
@@ -65,6 +85,21 @@ export default function GhlFormPopup() {
 
   if (!open) return null;
 
+  const badge = language === "en" ? "NEWSLETTER" : "INFOLETTRE";
+  const title =
+    language === "en"
+      ? "Get our best insights (1–2x/week)."
+      : "Reçois nos meilleurs insights (1–2x/semaine).";
+  const subtitle =
+    language === "en"
+      ? "Automation, AI, templates, and practical strategies — no spam."
+      : "Automatisation, IA, templates, et stratégies concrètes — zéro spam.";
+  const notNow = language === "en" ? "Not now" : "Pas maintenant";
+  const fineprint =
+    language === "en"
+      ? "By subscribing, you agree to receive emails. Unsubscribe anytime."
+      : "En t’inscrivant, tu acceptes de recevoir des courriels. Désinscription en tout temps.";
+
   return (
     <div
       style={s.overlay}
@@ -73,20 +108,18 @@ export default function GhlFormPopup() {
       }}
     >
       <div style={s.modal} role="dialog" aria-modal="true">
-        <button type="button" onClick={dismiss} style={s.close} aria-label="Fermer">
+        <button type="button" onClick={dismiss} style={s.close} aria-label="Close">
           ×
         </button>
 
-        <div style={s.badge}>INFOLETTRE</div>
-        <h2 style={s.title}>Reçois nos meilleurs insights (1–2x/semaine).</h2>
-        <p style={s.subtitle}>
-          Automatisation, IA, templates, et stratégies concrètes — zéro spam.
-        </p>
+        <div style={s.badge}>{badge}</div>
+        <h2 style={s.title}>{title}</h2>
+        <p style={s.subtitle}>{subtitle}</p>
 
         <div style={s.iframeWrap}>
           <iframe
             title="Nuvra Newsletter"
-            src={FORM_URL}
+            src={formUrl}
             style={s.iframe}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -95,13 +128,11 @@ export default function GhlFormPopup() {
 
         <div style={s.footerRow}>
           <button type="button" onClick={dismiss} style={s.secondary}>
-            Pas maintenant
+            {notNow}
           </button>
         </div>
 
-        <p style={s.fineprint}>
-          En t’inscrivant, tu acceptes de recevoir des courriels. Désinscription en tout temps.
-        </p>
+        <p style={s.fineprint}>{fineprint}</p>
       </div>
     </div>
   );
